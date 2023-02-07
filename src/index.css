@@ -1,13 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(rgba(29,78,216) 0%, rgba(29,78,216,0.8) 25%, rgba(29,78,216,0.7) 50%, rgba(29,78,216,0.8) 75%, rgba(29,78,216) 100%), url(/bg-home.jpg);
+  height: 100vh;
+  padding: 25px 0;
+  color: #fff;
+  /* text-shadow: 2px 2px 3px #000; */
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.marquee-footer {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
 }
+
+.marquee-footer p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marqueeLeft 10s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+
+.marquee-body {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.marquee-body .marquee-inside {
+  display: inline-block;
+  padding-top: 100%;
+  animation: marqueeTop 2s linear infinite;
+}
+
+@keyframes marqueeTop {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* .App {
+  background: linear-gradient(to left top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%), url(/bg-home.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+} */
